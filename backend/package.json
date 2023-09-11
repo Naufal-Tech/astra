@@ -7,7 +7,7 @@
     "dev": "nodemon index.ts",
     "build": "npx tsc",
     "start": "node dist/index.js",
-    "test": "--require ts-node/register cross-env NODE_ENV=test mocha exit",
+    "test": "nyc mocha --require ts-node/register --watch-extensions ts test/**/*.spec.ts -- -w",
     "testing": "nyc mocha --require ts-node/register test/**/*.spec.ts"
   },
   "keywords": [],

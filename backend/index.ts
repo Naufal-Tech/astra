@@ -16,6 +16,9 @@ app.use(bodyParser.json());
 // use CORS middleware
 app.use(cors());
 
+// Defining the routes
+app.use('/', taskRouter);
+
 // Create Database connection
 export let dbConnection: Connection;
 
@@ -43,8 +46,5 @@ createConnection({
   .catch((error) => {
     console.error('Error connecting to database:', error);
   });
-
-// Defining the routes
-app.use('/', taskRouter);
 
 export default app;
